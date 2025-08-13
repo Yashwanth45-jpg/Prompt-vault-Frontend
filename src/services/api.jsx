@@ -1,16 +1,11 @@
 // src/services/api.jsx
 import axios from 'axios';
-
-// Access the backend URL from environment variables
-// For Vite, environment variables are exposed via import.meta.env
 const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-// Create an axios instance configured to talk to your backend
 const apiClient = axios.create({
-  baseURL: `${BACKEND_BASE_URL}/api`, // Dynamically set the base URL
-  withCredentials: true, // This is crucial for sending cookies (e.g., session cookies for authentication)
+  baseURL: `${BACKEND_BASE_URL}/api`, // This is the key line
+  withCredentials: true,
 });
-
 // ... (rest of your existing code for checkAuthStatus, login, getMyPrompts, etc.)
 
 // NEW FUNCTION TO CHECK AUTH STATUS
