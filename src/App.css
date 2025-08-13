@@ -1,0 +1,48 @@
+/* src/App.css */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d1117; /* Dark background color */
+  overflow: hidden;
+}
+
+.vault-container {
+  position: relative;
+  width: 400px; /* Adjust size as needed */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.vault-logo {
+  width: 100%;
+  height: auto;
+  /* Animate the image to simulate a revolving wheel and opening door */
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Keyframes for a gentle pulsing effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for a simple fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

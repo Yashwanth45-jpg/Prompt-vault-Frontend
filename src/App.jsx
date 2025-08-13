@@ -9,6 +9,8 @@ import CommunityPage from './pages/CommunityPage';
 import LandingPage from './pages/LandingPage';
 import Navbar from './components/Navbar';
 import CreatePromptModal from './components/CreatePromptModal';
+import LoadingScreen from './components/LoadingScreen';
+
 
 function AppWrapper() {
   const { user, loading } = useAuth();
@@ -25,8 +27,9 @@ function AppWrapper() {
       }
   };
 
-  if (loading) {
-    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading application...</div>;
+ if (loading) {
+    // Show the LoadingScreen component when the auth state is loading
+    return <LoadingScreen />;
   }
 
   return (
