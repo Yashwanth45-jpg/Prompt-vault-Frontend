@@ -1,0 +1,106 @@
+/* The bottom nav is hidden by default on larger screens */
+.bottom-nav {
+  display: none;
+}
+
+/* Styles for mobile view, making the nav visible and beautiful */
+@media screen and (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 65px;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    /* --- THIS IS NEW --- */
+    /* Make the container relative to position the curve */
+    position: relative;
+  }
+
+  .bottom-nav.dark {
+    background: #1f2937;
+    border-top: 1px solid #374151;
+  }
+
+  /* --- THIS IS THE NEW CURVED BACKGROUND EFFECT --- */
+  .bottom-nav::before {
+    content: '';
+    position: absolute;
+    top: -35px; /* Pull the curve up */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px; /* Width of the semicircle */
+    height: 45px; /* Height of the semicircle */
+    background: transparent;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* Create the curve by cutting out a shape from the main background */
+    box-shadow: 0 25px 0 0 #d8cccc; 
+  }
+
+  .bottom-nav.dark::before {
+    box-shadow: 0 25px 0 0 #1f2937;
+  }
+
+
+  .bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100%;
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 0.75rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 2; /* Ensure links are above the curve */
+  }
+
+  .bottom-nav.dark .bottom-nav-link {
+    color: #9ca3af;
+  }
+
+  .bottom-nav-link i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  .bottom-nav-link.active {
+    color: #4f46e5;
+    transform: translateY(-2px);
+  }
+  
+  .bottom-nav.dark .bottom-nav-link.active {
+    color: #818cf8;
+  }
+
+  .bottom-nav-create {
+    background: linear-gradient(45deg, #4F46E5, #6D28D9);
+    color: white;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    transform: translateY(-20px);
+    z-index: 2; /* Ensure the button is above the curve */
+    transition: transform 0.2s ease;
+  }
+
+  .bottom-nav.dark .bottom-nav-create {
+      border-color: #566274;
+  }
+}

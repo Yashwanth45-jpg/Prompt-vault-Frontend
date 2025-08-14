@@ -1,0 +1,122 @@
+/* Main Navbar Container */
+.navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  height: 64px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Theme for Navbar */
+.navbar.dark {
+  background: rgba(17, 24, 39, 0.8);
+  border-bottom: 1px solid #374151;
+}
+
+/* Centered Content Container */
+.nav-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left and Right Sections */
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.left-section {
+  gap: 40px;
+}
+
+/* Logo Styling */
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+.navbar.dark .logo {
+  color: #F9FAFB;
+}
+
+/* Navigation Links Container */
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Individual Navigation Link */
+.nav-link {
+  text-decoration: none;
+  color: #4B5563;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar.dark .nav-link {
+  color: #9CA3AF;
+}
+
+/* Active Navigation Link */
+.nav-link.active {
+  background: linear-gradient(45deg, #4F46E5, #6D28D9);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Create Prompt Button */
+.btn-create {
+  background: linear-gradient(45deg, #4F46E5, #6D28D9);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Logout Button */
+.btn-logout {
+  background: #F3F4F6;
+  color: #4B5563;
+  border: 1px solid #E5E7EB;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.navbar.dark .btn-logout {
+  background: #1F2937;
+  color: #9CA3AF;
+  border-color: #374151;
+}
+
+/* Hides the entire top navbar on mobile screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}

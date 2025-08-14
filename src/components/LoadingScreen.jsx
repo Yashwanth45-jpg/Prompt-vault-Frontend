@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 // Assuming you have the image in your public folder or src
 import loadingImage from '../assets/image.png';
-// import '../App.css'
 import '../App.css'
 
 const LoadingScreen = ({ children }) => {

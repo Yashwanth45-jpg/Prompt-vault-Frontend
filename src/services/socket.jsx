@@ -1,10 +1,16 @@
-// Example of how to connect to the backend's Socket.io
+import axios from 'axios';
 import { io } from 'socket.io-client';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+// --- HTTP API Client (Axios) ---
+const apiClient = axios.create({
+  baseURL: 'https://prompt-vault-app-backend.onrender.com/api', // Your local backend URL
+  withCredentials: true, // This is crucial for sending cookies
+});
 
-const socket = io(BACKEND_URL, {
-  withCredentials: true
+
+// --- Real-Time Client (Socket.IO) ---
+const socket = io('https://prompt-vault-app-backend.onrender.com', {
+    withCredentials: true
 });
 
 export default socket;
